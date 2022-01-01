@@ -1,18 +1,63 @@
-import { useEffect } from 'react';
+import { useEffect, useContext, useState } from 'react';
+import ThemeContext from 'context/ThemeContext';
+
+const checkScrollDirectionIsUp = (event) => {
+  if (event.wheelDelta) {
+    return event.wheelDelta > 0;
+  }
+  return event.deltaY < 0;
+};
+
+const isScrollTop = () => {
+  return document.documentElement.scrollTop < 10;
+};
+
+const isScrollBottom = () => {
+  return document.documentElement.scrollTop + document.documentElement.clientHeight + 10 > document.documentElement.scrollHeight;
+};
 
 const Menu = () => {
-  const isDarkMode = true;
+  const [isDarkMode, setDarkMode] = useContext(ThemeContext);
   const toggleColorMode = () => {
+    setDarkMode(!isDarkMode);
   };
 
   useEffect(() => {
-    const handleScroll = (e) => {
-      console.log('top', document.documentElement.scrollTop);
-      console.log('documentElement', document.documentElement);
+    const checkScrollDirection = (e) => {
+      const navBarDOM = document.querySelector('.navbar');
+      if (checkScrollDirectionIsUp(e)) {
+        navBarDOM?.classList.add('headroom--pinned');
+        navBarDOM?.classList.remove('headroom--unpinned');
+      } else {
+        navBarDOM?.classList.add('headroom--unpinned');
+        navBarDOM?.classList.remove('headroom--pinned');
+      }
     };
-    document.addEventListener('scroll', handleScroll);
+
+    const checkScrollPosition = () => {
+      const navBarDOM = document.querySelector('.navbar');
+      if (isScrollTop()) {
+        navBarDOM?.classList.add('headroom--top');
+        navBarDOM?.classList.remove('headroom--not-top');
+      } else {
+        navBarDOM?.classList.remove('headroom--top');
+        navBarDOM?.classList.add('headroom--not-top');
+      }
+
+      if (isScrollBottom()) {
+        navBarDOM?.classList.add('headroom--bottom');
+        navBarDOM?.classList.remove('headroom--not-bottom');
+      } else {
+        navBarDOM?.classList.remove('headroom--bottom');
+        navBarDOM?.classList.add('headroom--not-bottom');
+      }
+    };
+
+    document.addEventListener('wheel', checkScrollDirection);
+    document.addEventListener('scroll', checkScrollPosition);
     return () => {
-      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('wheel', checkScrollDirection);
+      document.removeEventListener('scroll', checkScrollPosition);
     };
   }, []);
 
@@ -21,8 +66,7 @@ const Menu = () => {
       <div className="container">
         <a className="navbar-brand" href="index.html"><i className='uil uil-user'></i> Marvel</a>
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button">
           <span className="navbar-toggler-icon"></span>
           <span className="navbar-toggler-icon"></span>
           <span className="navbar-toggler-icon"></span>

@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { Button } from 'common';
 import softwareEngineerImg from 'images/undraw/undraw_software_engineer_lvl5.svg';
 
 const About = () => {
+  const router = useRouter();
   return <section className="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
     <div className="container">
       <div className="row">
@@ -21,8 +24,8 @@ const About = () => {
             <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
 
             <div className="custom-btn-group mt-4">
-              <a href="#" className="btn mr-lg-2 custom-btn"><i className='uil uil-file-alt'></i> Download Resume</a>
-              <a href="#contact" className="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
+              <Button className="mr-lg-2"><i className='uil uil-file-alt'></i> Download Resume</Button>
+              <Button mode="secondary" onClick={() => router.push('#contact')}>Get a free quote</Button>
             </div>
           </div>
         </div>
@@ -35,7 +38,7 @@ const About = () => {
 
       </div>
     </div>
-  </section>;
+  </section >;
 };
 
 export default About;

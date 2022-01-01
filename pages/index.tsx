@@ -1,3 +1,4 @@
+import { useEffect, useContext } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -8,17 +9,17 @@ import Features from 'modules/Features';
 import Contact from 'modules/Contact';
 import Footer from 'modules/Footer';
 
-import { useEffect } from 'react';
+import ThemeContext from 'context/ThemeContext';
 
 const Home: NextPage = () => {
+  const [isDarkMode] = useContext(ThemeContext);
   useEffect(() => {
-    const isDarkMode = true;
     if (isDarkMode) {
       document.querySelector("body")?.classList.add("dark-mode");
     } else {
       document.querySelector("body")?.classList.remove("dark-mode");
     }
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <div>

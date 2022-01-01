@@ -1,3 +1,5 @@
+import { Button } from 'common';
+
 const Contact = () => {
   return (
     <section className="contact py-5" id="contact">
@@ -42,8 +44,8 @@ const Contact = () => {
                     <textarea name="message" rows={6} className="form-control" id="message" placeholder="Message"></textarea>
                   </div>
 
-                  <div className="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" className="form-control submit-btn" value="Send Button" />
+                  <div className="col-lg-5 col-12">
+                    <Button mode="submit">Send Button</Button>
                   </div>
                 </div>
               </form>
