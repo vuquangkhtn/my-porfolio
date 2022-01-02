@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Button } from 'common';
+import { Button, Icon } from 'common';
 import softwareEngineerImg from 'images/undraw/undraw_software_engineer_lvl5.svg';
 
 const About = () => {
@@ -24,8 +24,8 @@ const About = () => {
             <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
 
             <div className="custom-btn-group mt-4">
-              <Button className="mr-lg-2"><i className='uil uil-file-alt'></i> Download Resume</Button>
-              <Button mode="secondary" onClick={() => router.push('#contact')}>Get a free quote</Button>
+              <Button className="mr-lg-2"><div className='d-flex align-items-center'><Icon className="mr-1" icon='uil:file-alt' width="20" /> <span>Download Resume</span></div></Button>
+              <Button className="ml-2" mode="secondary" onClick={() => router.push('#contact')}>Get a free quote</Button>
             </div>
           </div>
         </div>

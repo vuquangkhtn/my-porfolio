@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState } from 'react';
+import { Icon, NavBarToggler } from 'common';
 import ThemeContext from 'context/ThemeContext';
 
 const checkScrollDirectionIsUp = (event) => {
@@ -18,8 +19,13 @@ const isScrollBottom = () => {
 
 const Menu = () => {
   const [isDarkMode, setDarkMode] = useContext(ThemeContext);
+  const [menuShown, showMenu] = useState(false);
   const toggleColorMode = () => {
     setDarkMode(!isDarkMode);
+  };
+
+  const toggleNavbar = () => {
+    showMenu(!menuShown);
   };
 
   useEffect(() => {
@@ -64,15 +70,10 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-expand-sm navbar-light headroom">
       <div className="container">
-        <a className="navbar-brand" href="index.html"><i className='uil uil-user'></i> Marvel</a>
+        <a className="navbar-brand" href=""><Icon icon='uil:user' width="40" /> Marvel</a>
+        <NavBarToggler className="navbar-toggler" onClick={toggleNavbar} expanded={menuShown} />
 
-        <button className="navbar-toggler" type="button">
-          <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-icon"></span>
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`navbar-collapse ${menuShown ? "show" : "collapse"}`}>
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <a href="#about" className="nav-link"><span data-hover="About">About</span></a>
@@ -91,7 +92,7 @@ const Menu = () => {
           <ul className="navbar-nav ml-lg-auto">
             <div className="ml-lg-4">
               <div className="color-mode d-lg-flex justify-content-center align-items-center" onClick={toggleColorMode}>
-                <i className={`color-mode-icon ${isDarkMode ? 'active' : null}`}></i>
+                {isDarkMode ? <Icon icon="uil:sun" width="30" color="white" /> : <Icon icon="uil:moon" width="30" color="black" />}
                 Color mode
               </div>
             </div>

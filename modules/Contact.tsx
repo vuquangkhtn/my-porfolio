@@ -1,4 +1,4 @@
-import { Button } from 'common';
+import { Button, Input, Icon, TextArea } from 'common';
 
 const Contact = () => {
   return (
@@ -8,20 +8,21 @@ const Contact = () => {
 
           <div className="col-lg-5 mr-lg-5 col-12">
             <div className="google-map w-100">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12088.558402180099!2d-73.99373482142036!3d40.75895421922642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855b8fb3083%3A0xa0f9aef176042a5c!2sTheater+District%2C+New+York%2C+NY%2C+USA!5e0!3m2!1sen!2smm!4v1549875377188" width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen></iframe>
+              <iframe src="https://maps.google.com/maps?q=Phuong%20tan%20hung,%20quan%207,%20Ho%20chi%20minh%20city&t=&z=13&ie=UTF8&iwloc=&output=embed" width="400" height="300" frameBorder="0" style={{ border: 0 }} allowFullScreen></iframe>
             </div>
 
             <div className="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
               <div className="contact-info-item">
                 <h3 className="mb-3 text-white">Say hello</h3>
-                <p className="footer-text mb-0">010 020 0960</p>
-                <p><a href="mailto:hello@company.co">hello@company.co</a></p>
+                <p className="footer-text mb-0">(+84)38 7708 009</p>
+                <p><a href="mailto:hello@company.co">vuquangkhtn@gmail.com</a></p>
               </div>
 
               <ul className="social-links">
-                <li><a href="#" className="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
-                <li><a href="#" className="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
-                <li><a href="#" className="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+                <li><a target="_blank" href="https://github.com/vuquangkhtn" title="github" rel="noreferrer"><Icon icon='uil:github' width="20" /></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/ngvuquang/" title="linkedin" rel="noreferrer"><Icon icon='uil:linkedin' width="20" /></a></li>
+                <li><a href="mailto:vuquangkhtn@gmail.com" title="email"><Icon icon='uil:google' width="20" /></a></li>
+                <li><a href="tel:+84387708009" title="phone"><Icon icon='uil:phone' width="20" /></a></li>
               </ul>
             </div>
           </div>
@@ -33,19 +34,19 @@ const Contact = () => {
               <form action="" method="get">
                 <div className="row">
                   <div className="col-lg-6 col-12">
-                    <input type="text" className="form-control" name="name" placeholder="Your Name" id="name" />
+                    <Input type="text" name="name" placeholder="Your Name" />
                   </div>
 
                   <div className="col-lg-6 col-12">
-                    <input type="email" className="form-control" name="email" placeholder="Email" id="email" />
+                    <Input type="email" name="email" placeholder="Email" />
                   </div>
 
                   <div className="col-12">
-                    <textarea name="message" rows={6} className="form-control" id="message" placeholder="Message"></textarea>
+                    <TextArea name="message" rows={6} placeholder="Message" />
                   </div>
 
                   <div className="col-lg-5 col-12">
-                    <Button mode="submit">Send Button</Button>
+                    <Button mode="submit">Send Contact</Button>
                   </div>
                 </div>
               </form>

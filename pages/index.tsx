@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import Menu from 'modules/Menu';
 import About from 'modules/About';
-import Projects from 'modules/Projects';
 import Features from 'modules/Features';
 import Contact from 'modules/Contact';
 import Footer from 'modules/Footer';
@@ -29,7 +28,6 @@ const Home: NextPage = () => {
       </Head>
       <Menu />
       <About />
-      <Projects />
       <Features />
       <Contact />
       <Footer />
