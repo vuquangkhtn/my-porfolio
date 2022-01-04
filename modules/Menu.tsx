@@ -1,21 +1,7 @@
 import { useEffect, useContext, useState } from 'react';
 import { Icon, NavBarToggler } from 'common';
 import ThemeContext from 'context/ThemeContext';
-
-const checkScrollDirectionIsUp = (event) => {
-  if (event.wheelDelta) {
-    return event.wheelDelta > 0;
-  }
-  return event.deltaY < 0;
-};
-
-const isScrollTop = () => {
-  return document.documentElement.scrollTop < 10;
-};
-
-const isScrollBottom = () => {
-  return document.documentElement.scrollTop + document.documentElement.clientHeight + 10 > document.documentElement.scrollHeight;
-};
+import { checkScrollDirectionIsUp, isScrollBottom, isScrollTop } from 'utils/scroll';
 
 const Menu = ({ username }) => {
   const [isDarkMode, setDarkMode] = useContext(ThemeContext);

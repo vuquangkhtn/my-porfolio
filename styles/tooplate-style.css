@@ -573,3 +573,10 @@ strong {
 .carousel-control-next {
   right: -36px;
 }
+
+.medal {
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: #474559;
+  color: #ffffff;
+}

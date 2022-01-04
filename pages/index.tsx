@@ -38,8 +38,8 @@ const Home: NextPage = ({ user = {}, skills = [], experiences = [], educations =
       <About user={user} />
       <Skills skills={skills} />
       <Histories histories={histories} />
-      <Projects experiences={experiences} />
       <Educations educations={educations} />
+      <Projects experiences={experiences} />
       <Contact user={user} />
       <Footer />
     </div>
