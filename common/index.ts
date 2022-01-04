@@ -1,4 +1,4 @@
-import { Button, Input, TextArea, Link, NavBarToggler, confirmKit } from 'my-porfolio-common-library';
+import { Button, Input, TextArea, Link, NavBarToggler, confirmKit, StaticPages } from 'my-porfolio-common-library';
 import { Icon } from '@iconify/react';
 
 export {
@@ -8,5 +8,6 @@ export {
     TextArea,
     Link,
     NavBarToggler,
+    StaticPages,
     confirmKit
 };

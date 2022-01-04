@@ -17,7 +17,7 @@ const isScrollBottom = () => {
   return document.documentElement.scrollTop + document.documentElement.clientHeight + 10 > document.documentElement.scrollHeight;
 };
 
-const Menu = () => {
+const Menu = ({ username }) => {
   const [isDarkMode, setDarkMode] = useContext(ThemeContext);
   const [menuShown, showMenu] = useState(false);
   const toggleColorMode = () => {
@@ -70,19 +70,19 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-expand-sm navbar-light headroom">
       <div className="container">
-        <a className="navbar-brand" href=""><Icon icon='uil:user' width="40" /> Marvel</a>
+        <a className="navbar-brand" href=""><Icon icon='uil:user' width="40" /> {username}</a>
         <NavBarToggler className="navbar-toggler" onClick={toggleNavbar} expanded={menuShown} />
 
         <div className={`navbar-collapse ${menuShown ? "show" : "collapse"}`}>
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a href="#about" className="nav-link"><span data-hover="About">About</span></a>
+              <a href="#skill" className="nav-link"><span data-hover="Skill">Skill</span></a>
             </li>
             <li className="nav-item">
-              <a href="#project" className="nav-link"><span data-hover="Projects">Projects</span></a>
+              <a href="#history" className="nav-link"><span data-hover="History">History</span></a>
             </li>
             <li className="nav-item">
-              <a href="#resume" className="nav-link"><span data-hover="Resume">Resume</span></a>
+              <a href="#project" className="nav-link"><span data-hover="Project">Project</span></a>
             </li>
             <li className="nav-item">
               <a href="#contact" className="nav-link"><span data-hover="Contact">Contact</span></a>

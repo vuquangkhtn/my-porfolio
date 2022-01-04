@@ -95,7 +95,7 @@ strong {
   display: inline-block;
   vertical-align: top;
   margin-top: 5px;
-  min-width: 260px;
+  min-width: 300px;
   position: relative;
 }
 
@@ -117,11 +117,7 @@ strong {
 }
 
 .animated-item:nth-child(2n+2) {
-  animation-delay: 2s;
-}
-
-.animated-item:nth-child(3n+3) {
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 @keyframes BottomTotop {
@@ -346,7 +342,7 @@ strong {
 .timeline-info {
   display: inline-block;
   vertical-align: top;
-  max-width: 432px;
+  max-width: 632px;
   margin-left: 6em;
 }
 
@@ -516,7 +512,7 @@ strong {
 
 @media (max-width: 580px) {
   .animated-info {
-    min-width: 200px;
+    min-width: 220px;
   }
 
   .animated-item {
