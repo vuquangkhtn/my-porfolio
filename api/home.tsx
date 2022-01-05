@@ -1,5 +1,3 @@
-import download from 'utils/download';
-
 const HOMEPAGE_QUERY = `query HomePage($userId: ID!) {
   user(id: $userId) {
     id
@@ -61,17 +59,5 @@ export const getHome = async () => {
     })
   })
     .then(r => r.json());
-  return data;
-};
-
-
-export const downloadResume = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/download-resume`, {
-    method: 'GET',
-  })
-    .then(res => res.blob())
-    .then(blob => {
-      download(blob, 'CV_QuangVuNguyen');
-    });
   return data;
 };

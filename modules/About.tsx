@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button, Icon } from 'common';
-import { downloadResume } from 'api/home';
+import { downloadResume } from 'api/download';
 import softwareEngineerImg from 'images/undraw/undraw_software_engineer_lvl5.svg';
 
 const About = ({ user }) => {

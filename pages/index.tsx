@@ -18,9 +18,9 @@ const Home: NextPage = ({ user = {}, skills = [], experiences = [], educations =
   const [isDarkMode] = useContext(ThemeContext);
   useEffect(() => {
     if (isDarkMode) {
-      document.querySelector("body")?.classList.add("dark-mode");
+      document.querySelector('body')?.classList.add('dark-mode');
     } else {
-      document.querySelector("body")?.classList.remove("dark-mode");
+      document.querySelector('body')?.classList.remove('dark-mode');
     }
   }, [isDarkMode]);
 

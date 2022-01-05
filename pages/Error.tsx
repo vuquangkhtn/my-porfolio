@@ -1,4 +1,4 @@
-import { StaticPages } from "common";
+import { StaticPages } from 'common';
 
 const Error = () => <StaticPages.Maintenance />;
 
