@@ -1,8 +1,53 @@
-import { Button, Input, Icon, TextArea } from 'common';
+import { useState } from 'react';
+import { Button, Input, Icon, TextArea, confirmPopup } from 'common';
+import { addContact } from 'api/contact';
 
 const Contact = ({ user }) => {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const formatedPhone = user.phone?.replace(/[^0-9]+/g, '') || 'none';
   const encodedAddress = encodeURIComponent(user.address);
+
+  const sendContact = async () => {
+    try {
+      if (!email || !name) {
+        await confirmPopup({
+          header: 'Send Contact Failed',
+          confirmation: 'Please input email and name first!',
+          isMessage: true,
+        });
+        return;
+      }
+
+      const isAccepted = await confirmPopup({
+        header: 'Send Contact Confirmation',
+        confirmation: 'Are you sure to contact me with those information?',
+      });
+      if (!isAccepted) return;
+
+      const result = await addContact({ email, name, description });
+      if (result) {
+        confirmPopup({
+          header: 'Send Contact Successfully',
+          confirmation: 'Thanks for getting in touch! I sent you an email for confirmation.',
+          isMessage: true,
+        });
+        setEmail('');
+        setName('');
+        setDescription('');
+      } else {
+        throw {};
+      }
+    } catch (e) {
+      console.error(e);
+      confirmPopup({
+        header: 'Send Contact Failed',
+        confirmation: 'This is my problem. Kindly use other ways to contact me.',
+        isMessage: true,
+      });
+    }
+  };
 
   return (
     <section className="contact py-5" id="contact">
@@ -31,27 +76,27 @@ const Contact = ({ user }) => {
 
           <div className="col-lg-6 col-12">
             <div className="contact-form">
-              <h2 className="mb-4">{`Interested to work together? Let's talk`}</h2>
+              <h2 className="mb-4">{'Interested to work together? Let\'s talk'}</h2>
 
-              <form action="" method="get">
+              <div>
                 <div className="row">
                   <div className="col-lg-6 col-12">
-                    <Input type="text" name="name" placeholder="Your Name" />
+                    <Input type="text" name="name" placeholder="Your Name" onChange={(e) => setName(e.target.value)} />
                   </div>
 
                   <div className="col-lg-6 col-12">
-                    <Input type="email" name="email" placeholder="Email" />
+                    <Input type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                   </div>
 
                   <div className="col-12">
-                    <TextArea name="message" rows={6} placeholder="Message" />
+                    <TextArea name="message" rows={6} placeholder="Message" onChange={(e) => setDescription(e.target.value)} />
                   </div>
 
                   <div className="col-lg-5 col-12">
-                    <Button mode="submit">Send Contact</Button>
+                    <Button mode="submit" onClick={sendContact}>Send Contact</Button>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
 

@@ -32,6 +32,9 @@ const Home: NextPage = ({ user = {}, skills = [], experiences = [], educations =
     <div>
       <Head>
         <title>{`${user.name}'s porfolio`}</title>
+        <meta name="description" content={user.bio} />
+        <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, ES6, ReactJS, NextJS, NodeJS" />
+        <meta name="author" content={user.name} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Menu username={user.name} />
