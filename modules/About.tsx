@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button, Icon, confirmPopup } from 'common';
 import { downloadResume } from 'api/download';
-import softwareEngineerImg from 'images/undraw/undraw_software_engineer_lvl5.svg';
+import softwareEngineerImg from 'static/images/undraw/undraw_software_engineer_lvl5.svg';
 
 const About = ({ user }) => {
   const router = useRouter();
