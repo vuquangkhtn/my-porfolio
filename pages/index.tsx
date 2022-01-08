@@ -14,7 +14,16 @@ import ThemeContext from 'context/ThemeContext';
 import { getHome } from 'api/home';
 import Error from './Error';
 
-const Home: NextPage = ({ user = {}, skills = [], experiences = [], educations = [], histories = [], err }) => {
+type HomeProps = {
+  user: User,
+  skills: Array<Skill>,
+  experiences: Array<Experience>,
+  educations: Array<Education>,
+  histories: Array<History>,
+  err: Object,
+}
+
+const Home: NextPage<HomeProps> = ({ user, skills = [], experiences = [], educations = [], histories = [], err }: HomeProps) => {
   const [isDarkMode] = useContext(ThemeContext);
   useEffect(() => {
     if (isDarkMode) {
