@@ -4,7 +4,10 @@ import { Button, Icon, confirmPopup } from 'common';
 import { downloadResume } from 'api/download';
 import softwareEngineerImg from 'static/images/undraw/undraw_software_engineer_lvl5.svg';
 
-const About = ({ user }) => {
+type AboutProps = {
+  user: User
+}
+const About = ({ user }: AboutProps) => {
   const router = useRouter();
   const download = async () => {
     const isAccepted = await confirmPopup({

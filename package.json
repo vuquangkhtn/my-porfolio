@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "tsc": "tsc",
+    "lint": "next lint && tsc"
   },
   "dependencies": {
     "my-porfolio-common-library": "^1.0.5",
@@ -20,6 +21,9 @@
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "typescript": "4.5.4"
   }
 }

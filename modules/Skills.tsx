@@ -1,4 +1,4 @@
-const Skills = ({ skills }) => {
+const Skills = ({ skills }: { skills: Array<Skill> }) => {
   return (
     <section className="resume py-5 d-lg-flex justify-content-center align-items-center" id="skill">
       <div className="container">

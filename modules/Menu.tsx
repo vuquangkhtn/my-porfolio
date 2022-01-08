@@ -1,9 +1,9 @@
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext, useState, WheelEvent } from 'react';
 import { Icon, NavBarToggler } from 'common';
 import ThemeContext from 'context/ThemeContext';
 import { checkScrollDirectionIsUp, isScrollBottom, isScrollTop } from 'utils/scroll';
 
-const Menu = ({ username }) => {
+const Menu = ({ username }: { username: string }) => {
   const [isDarkMode, setDarkMode] = useContext(ThemeContext);
   const [menuShown, showMenu] = useState(false);
   const toggleColorMode = () => {
@@ -15,7 +15,7 @@ const Menu = ({ username }) => {
   };
 
   useEffect(() => {
-    const checkScrollDirection = (e) => {
+    const checkScrollDirection = (e: any | WheelEvent) => {
       const navBarDOM = document.querySelector('.navbar');
       if (checkScrollDirectionIsUp(e)) {
         navBarDOM?.classList.add('headroom--pinned');
@@ -59,7 +59,7 @@ const Menu = ({ username }) => {
         <a className="navbar-brand" href=""><Icon icon='uil:user' width="40" /> {username}</a>
         <NavBarToggler className="navbar-toggler" onClick={toggleNavbar} expanded={menuShown} />
 
-        <div className={`navbar-collapse ${menuShown ? "show" : "collapse"}`}>
+        <div className={`navbar-collapse ${menuShown ? 'show' : 'collapse'}`}>
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <a href="#skill" className="nav-link"><span data-hover="Skill">Skill</span></a>

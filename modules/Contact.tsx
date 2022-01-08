@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Input, Icon, TextArea, confirmPopup } from 'common';
 import { addContact } from 'api/contact';
 
-const Contact = ({ user }) => {
+const Contact = ({ user }: { user: User }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -81,15 +81,15 @@ const Contact = ({ user }) => {
               <div>
                 <div className="row">
                   <div className="col-lg-6 col-12">
-                    <Input type="text" name="name" placeholder="Your Name" onChange={(e) => setName(e.target.value)} />
+                    <Input type="text" name="name" placeholder="Your Name" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} />
                   </div>
 
                   <div className="col-lg-6 col-12">
-                    <Input type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                    <Input type="email" name="email" placeholder="Email" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} />
                   </div>
 
                   <div className="col-12">
-                    <TextArea name="message" rows={6} placeholder="Message" onChange={(e) => setDescription(e.target.value)} />
+                    <TextArea name="message" rows={6} placeholder="Message" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)} />
                   </div>
 
                   <div className="col-lg-5 col-12">

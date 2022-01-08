@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import Menu from 'modules/Menu';
@@ -41,7 +41,6 @@ const Home: NextPage<HomeProps> = ({ user, skills = [], experiences = [], educat
     <div>
       <Head>
         <title>{`${user.name}'s porfolio`}</title>
-        <link rel="shortcut icon" href="static/user.png" />
         <meta name="description" content={user.bio} />
         <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, ES6, ReactJS, NextJS, NodeJS" />
         <meta name="author" content={user.name} />
@@ -59,7 +58,7 @@ const Home: NextPage<HomeProps> = ({ user, skills = [], experiences = [], educat
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const { data } = await getHome();
     return {

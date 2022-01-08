@@ -1,8 +1,10 @@
-export const checkScrollDirectionIsUp = (event) => {
-  if (event.wheelDelta) {
-    return event.wheelDelta > 0;
+import { WheelEvent } from 'react';
+
+export const checkScrollDirectionIsUp = (event: WheelEvent) => {
+  if (event.deltaY) {
+    return event.deltaY < 0;
   }
-  return event.deltaY < 0;
+  return event.deltaY > 0;
 };
 
 export const isScrollTop = () => {

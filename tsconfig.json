@@ -14,8 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
-    "noImplicitAny": false
+    "baseUrl": "."
   },
   "include": ["typings/**/*.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

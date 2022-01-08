@@ -1,11 +1,8 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { ReactComponentElement, useState } from 'react';
 
-interface ThemeContextInterface {
-
-}
 const ThemeContext = React.createContext<[Boolean?, any?]>([]);
 
-export const AppWrapper = ({ children }) => {
+export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setDarkMode] = useState<Boolean>(false);
 
   return (
@@ -15,4 +12,4 @@ export const AppWrapper = ({ children }) => {
   );
 };
 
-export default ThemeContext;
+export default ThemeContext; 
