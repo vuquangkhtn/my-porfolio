@@ -10,6 +10,5 @@ export const isScrollTop = (document: Document) => {
 
 export const isScrollBottom = (document: Document) => {
   const docElement = document.documentElement; 
-  console.log(docElement);
   return docElement.scrollTop + docElement.clientHeight + 10 > docElement.scrollHeight;
 };
