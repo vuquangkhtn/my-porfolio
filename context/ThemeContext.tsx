@@ -1,9 +1,11 @@
-import React, { ReactComponentElement, useState } from 'react';
+import React, { useState } from 'react';
 
 const ThemeContext = React.createContext<[Boolean?, any?]>([]);
 
-export const AppWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [isDarkMode, setDarkMode] = useState<Boolean>(false);
+type AppWrapperProps = { children: React.ReactNode, darkMode?: boolean };
+
+export const AppWrapper = ({ children, darkMode = false }: AppWrapperProps) => {
+  const [isDarkMode, setDarkMode] = useState<Boolean>(darkMode);
 
   return (
     <ThemeContext.Provider value={[isDarkMode, setDarkMode]}>

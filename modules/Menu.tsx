@@ -28,7 +28,7 @@ const Menu = ({ username }: { username: string }) => {
 
     const checkScrollPosition = () => {
       const navBarDOM = document.querySelector('.navbar');
-      if (isScrollTop()) {
+      if (isScrollTop(document)) {
         navBarDOM?.classList.add('headroom--top');
         navBarDOM?.classList.remove('headroom--not-top');
       } else {
@@ -36,7 +36,7 @@ const Menu = ({ username }: { username: string }) => {
         navBarDOM?.classList.add('headroom--not-top');
       }
 
-      if (isScrollBottom()) {
+      if (isScrollBottom(document)) {
         navBarDOM?.classList.add('headroom--bottom');
         navBarDOM?.classList.remove('headroom--not-bottom');
       } else {
@@ -77,8 +77,16 @@ const Menu = ({ username }: { username: string }) => {
 
           <ul className="navbar-nav ml-lg-auto">
             <div className="ml-lg-4">
-              <div className="color-mode d-lg-flex justify-content-center align-items-center" onClick={toggleColorMode}>
-                {isDarkMode ? <Icon icon="uil:sun" width="30" color="white" /> : <Icon icon="uil:moon" width="30" color="black" />}
+              <div
+                className="color-mode d-lg-flex justify-content-center align-items-center"
+                onClick={toggleColorMode}
+                data-testid={isDarkMode ? 'dark-icon' : 'light-icon'}
+              >
+                {isDarkMode ?
+                  <Icon icon="uil:sun" width="30" color="white" />
+                  :
+                  <Icon icon="uil:moon" width="30" color="black" />
+                }
                 Color mode
               </div>
             </div>

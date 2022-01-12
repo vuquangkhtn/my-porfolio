@@ -5,7 +5,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=optional" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=optional"
+            rel="stylesheet"
+          />
           <link rel="shortcut icon" href="static/user.png" />
         </Head>
         <body>

@@ -15,15 +15,22 @@ import { getHome } from 'api/home';
 import Error from './Error';
 
 type HomeProps = {
-  user: User,
-  skills: Array<Skill>,
-  experiences: Array<Experience>,
-  educations: Array<Education>,
-  histories: Array<History>,
-  err: Object,
-}
+  user: User;
+  skills: Array<Skill>;
+  experiences: Array<Experience>;
+  educations: Array<Education>;
+  histories: Array<History>;
+  err: Object;
+};
 
-const Home: NextPage<HomeProps> = ({ user, skills = [], experiences = [], educations = [], histories = [], err }: HomeProps) => {
+const Home: NextPage<HomeProps> = ({
+  user,
+  skills = [],
+  experiences = [],
+  educations = [],
+  histories = [],
+  err,
+}: HomeProps) => {
   const [isDarkMode] = useContext(ThemeContext);
   useEffect(() => {
     if (isDarkMode) {
@@ -42,7 +49,10 @@ const Home: NextPage<HomeProps> = ({ user, skills = [], experiences = [], educat
       <Head>
         <title>{`${user.name}'s porfolio`}</title>
         <meta name="description" content={user.bio} />
-        <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, ES6, ReactJS, NextJS, NodeJS" />
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, TypeScript, ES6, ReactJS, NextJS, NodeJS"
+        />
         <meta name="author" content={user.name} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
@@ -68,9 +78,9 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         err: {
-          statusCode: 404
-        }
-      }
+          statusCode: 404,
+        },
+      },
     };
   }
 };

@@ -46,7 +46,7 @@ const HOMEPAGE_QUERY = `query HomePage($userId: ID!) {
   }
 }`;
 
-export const getHome = async () => {
+export const getHome: () => Promise<HomeResponse> = async () => {
   const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/graphql`, {
     method: 'POST',
     headers: {

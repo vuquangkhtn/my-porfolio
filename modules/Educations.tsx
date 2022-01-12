@@ -15,6 +15,8 @@ const EducationList = ({ educations }: { educations: Array<Education> }) => (
 );
 
 const Educations = ({ educations }: { educations: Array<Education> }) => {
+  if (!educations || educations.length === 0) return null;
+
   return (
     <section className="resume py-5 d-lg-flex justify-content-center align-items-center" id="education">
       <div className="container">

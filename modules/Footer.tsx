@@ -1,15 +1,22 @@
+import { Link } from 'my-porfolio-common-library';
+
 const Footer = () => {
-  return <footer className="footer py-5">
-    <div className="container">
-      <div className="row">
-
-        <div className="col-lg-12 col-12">
-          <p className="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+  return (
+    <footer className="footer py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 col-12">
+            <p className="copyright-text text-center">
+              Designed by{' '}
+              <Link rel="nofollow" href="htwtps://www.facebook.com/tooplate">
+                Tooplate
+              </Link>
+            </p>
+          </div>
         </div>
-
       </div>
-    </div>
-  </footer>;
+    </footer>
+  );
 };
 
 export default Footer;
