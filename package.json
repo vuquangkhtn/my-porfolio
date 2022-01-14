@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --watch",
+    "unit-test": "jest",
+    "intergration-test": "cypress open",
     "tsc": "tsc",
     "lint": "next lint && tsc"
   },
@@ -23,6 +24,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",
+    "cypress": "^9.2.1",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
