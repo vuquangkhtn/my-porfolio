@@ -10,11 +10,13 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleDirectories: ['node_modules', '<rootDir>/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/cypress'],
   moduleNameMapper: {
     '^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js'
   },
   testEnvironment: 'jest-environment-jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

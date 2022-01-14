@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import Educations from '../Educations';
 import mockEducations from '../../__mocks__/data/educations';

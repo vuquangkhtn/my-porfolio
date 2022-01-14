@@ -1,5 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
-import { getByText, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Contact from '../Contact';
 import mockUser from '../../__mocks__/data/user';

@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import Histories from '../Histories';
 import mockHistories from '../../__mocks__/data/histories';

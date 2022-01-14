@@ -1,7 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import HomePage from '../index';
-import { AppWrapper } from '../../context/ThemeContext';
+import HomePage from '../pages/index';
+import { AppWrapper } from '../context/ThemeContext';
 
 describe('Home page', () => {
   it('should add .dark-mode className into body when the Dark Mode enable', () => {
