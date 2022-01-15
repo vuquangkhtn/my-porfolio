@@ -8,10 +8,12 @@ import Projects from 'modules/Projects';
 import Skills from 'modules/Skills';
 import Educations from 'modules/Educations';
 import Histories from 'modules/Histories';
+import Articles from 'modules/Articles';
 import Contact from 'modules/Contact';
 import Footer from 'modules/Footer';
 import ThemeContext from 'context/ThemeContext';
 import { getHome } from 'api/home';
+import imgSrc from 'static/images/undraw/undraw_software_engineer_lvl5.svg';
 import Error from './Error';
 
 type HomeProps = {
@@ -55,6 +57,11 @@ const Home: NextPage<HomeProps> = ({
         />
         <meta name="author" content={user.name} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:URL" content={imgSrc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${user.name}'s Porfolio`} />
+        <meta property="og:description" content={user.bio} />
+        <meta property="og:image" content={imgSrc} />
       </Head>
       <Menu username={user.name} />
       <About user={user} />
@@ -62,6 +69,7 @@ const Home: NextPage<HomeProps> = ({
       <Histories histories={histories} />
       <Educations educations={educations} />
       <Projects experiences={experiences} />
+      <Articles />
       <Contact user={user} />
       <Footer />
     </div>

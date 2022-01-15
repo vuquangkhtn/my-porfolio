@@ -7,6 +7,7 @@ import Histories from '../Histories';
 import Menu from '../Menu';
 import Projects from '../Projects';
 import Skills from '../Skills';
+import Articles from '../Articles';
 
 import mockUser from '../../__mocks__/data/user';
 import mockEducations from '../../__mocks__/data/educations';
@@ -51,5 +52,10 @@ it('should render Projects', () => {
 
 it('should render Skills', () => {
   const { container } = render(<Skills skills={mockSkills} />);
+  expect(container).toMatchSnapshot();
+});
+
+it('should render Articles', () => {
+  const { container } = render(<Articles />);
   expect(container).toMatchSnapshot();
 });

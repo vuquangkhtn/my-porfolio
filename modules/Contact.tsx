@@ -121,6 +121,7 @@ const Contact = ({ user }: { user: User }) => {
                 <div className="row">
                   <div className="col-lg-6 col-12">
                     <Input
+                      autoComplete="nope"
                       type="text"
                       name="name"
                       placeholder="Your Name"
@@ -132,6 +133,7 @@ const Contact = ({ user }: { user: User }) => {
 
                   <div className="col-lg-6 col-12">
                     <Input
+                      autoComplete="nope"
                       type="email"
                       name="email"
                       placeholder="Email"
@@ -143,6 +145,7 @@ const Contact = ({ user }: { user: User }) => {
 
                   <div className="col-12">
                     <TextArea
+                      autoComplete="nope"
                       name="message"
                       rows={6}
                       placeholder="Message"

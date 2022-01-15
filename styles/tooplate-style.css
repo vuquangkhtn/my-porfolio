@@ -166,7 +166,7 @@ strong {
 }
 
 .navbar[class*="-unpinned"] {
-  transform: translate(0, -150%);
+  transform: translate(0, -250%);
 }
 
 .navbar[class*="-pinned"] {
@@ -579,4 +579,22 @@ strong {
   border-radius: 6px;
   background: #474559;
   color: #ffffff;
+}
+
+.card-body h4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.card-body .card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
