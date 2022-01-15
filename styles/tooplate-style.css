@@ -297,10 +297,11 @@ strong {
   fill: #ffc200;
 }
 
-.dark-mode .owl-carousel .owl-nav button.owl-next,
-.dark-mode .owl-carousel .owl-nav button.owl-prev,
-.dark-mode .owl-carousel button.owl-dot {
-  color: #ffffff;
+.dark-mode .card {
+  border-color: #474559;
+}
+.dark-mode .card-body {
+  background: #474559;
 }
 
 .timeline-wrapper {
@@ -581,6 +582,14 @@ strong {
   color: #ffffff;
 }
 
+.card {
+  cursor: pointer;
+}
+
+.card:hover .card-body h4 {
+  color: #ffc200;
+}
+
 .card-body h4 {
   overflow: hidden;
   display: -webkit-box;
@@ -588,6 +597,7 @@ strong {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   white-space: normal;
+  transition: color 0.15s ease-in-out;
 }
 
 .card-body .card-text {
