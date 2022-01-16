@@ -45,8 +45,8 @@ const Menu = ({ username }: { username: string }) => {
       }
     };
 
-    document.addEventListener('wheel', checkScrollDirection);
-    document.addEventListener('scroll', checkScrollPosition);
+    document.addEventListener('wheel', checkScrollDirection, { passive: true });
+    document.addEventListener('scroll', checkScrollPosition, { passive: true });
     return () => {
       document.removeEventListener('wheel', checkScrollDirection);
       document.removeEventListener('scroll', checkScrollPosition);
