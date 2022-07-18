@@ -7618,10 +7618,10 @@ multicast-dns@^6.0.1:
     dns-packet "^1.3.1"
     thunky "^1.0.2"
 
-my-porfolio-common-library@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/my-porfolio-common-library/-/my-porfolio-common-library-1.0.6.tgz#6c126b4f230b2879ff7466ca4883bca86175a0f9"
-  integrity sha512-r7BklLdwotTnaw9Ur0Ky8/yyzduwdwLdWHmRCyNxL5/pKAtNRcli3QfW9nq0c0QIQW4udBp4O0kUDspyOXjmOA==
+my-porfolio-common-library@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/my-porfolio-common-library/-/my-porfolio-common-library-1.0.7.tgz#b4f49c8ee7cd7515153d60e46d5192677806aebb"
+  integrity sha512-vJO9fNUI6oiKRkLn1N3OmfRAvVOXlxxuhiTl78B6oN2gY9XGl3ZoN/mNCPO1aUWqIPpkKVUmp9WDCRDZgnK89A==
   dependencies:
     "@testing-library/jest-dom" "^5.14.1"
     "@testing-library/react" "^12.0.0"

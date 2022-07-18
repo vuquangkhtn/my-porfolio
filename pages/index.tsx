@@ -63,14 +63,16 @@ const Home: NextPage<HomeProps> = ({
         <meta property="og:description" content={user.bio} />
         <meta property="og:image" content={imgSrc} />
       </Head>
-      <Menu username={user.name} />
-      <About user={user} />
-      <Skills skills={skills} />
-      <Histories histories={histories} />
-      <Educations educations={educations} />
-      <Projects experiences={experiences} />
-      <Articles />
-      <Contact user={user} />
+      <main>
+        <Menu username={user.name} />
+        <About user={user} />
+        <Skills skills={skills} />
+        <Histories histories={histories} />
+        <Educations educations={educations} />
+        <Projects experiences={experiences} />
+        <Articles />
+        <Contact user={user} />
+      </main>
       <Footer />
     </div>
   );

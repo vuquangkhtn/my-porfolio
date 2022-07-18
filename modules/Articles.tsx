@@ -21,7 +21,7 @@ const ArticleList = () => {
                 />
               </div>
               <div className="card-body">
-                <h4 className="">{article.title}</h4>
+                <h3 className="">{article.title}</h3>
                 <p className="card-text">{article.description}</p>
               </div>
             </div>
@@ -36,7 +36,6 @@ const Article = () => {
   return (
     <section
       className="resume py-5 d-lg-flex justify-content-center align-items-center"
-      id="education"
     >
       <div className="container">
         <div className="row">

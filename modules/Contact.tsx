@@ -63,6 +63,9 @@ const Contact = ({ user }: { user: User }) => {
                 frameBorder="0"
                 style={{ border: 0 }}
                 allowFullScreen
+                role="application"
+                aria-roledescription="my-map"
+                aria-label="google-map"
               ></iframe>
             </div>
 
@@ -121,7 +124,7 @@ const Contact = ({ user }: { user: User }) => {
                 <div className="row">
                   <div className="col-lg-6 col-12">
                     <Input
-                      autoComplete="nope"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Your Name"
@@ -133,7 +136,7 @@ const Contact = ({ user }: { user: User }) => {
 
                   <div className="col-lg-6 col-12">
                     <Input
-                      autoComplete="nope"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email"
@@ -145,7 +148,7 @@ const Contact = ({ user }: { user: User }) => {
 
                   <div className="col-12">
                     <TextArea
-                      autoComplete="nope"
+                      autoComplete="off"
                       name="message"
                       rows={6}
                       placeholder="Message"

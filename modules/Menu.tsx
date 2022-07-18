@@ -57,7 +57,7 @@ const Menu = ({ username }: { username: string }) => {
     <nav className="navbar navbar-expand-sm navbar-light headroom">
       <div className="container">
         <a className="navbar-brand" href=""><Icon icon='uil:user' width="40" /> {username}</a>
-        <NavBarToggler className="navbar-toggler" onClick={toggleNavbar} expanded={menuShown} />
+        <NavBarToggler className="navbar-toggler" onClick={toggleNavbar} expanded={menuShown} title="Navbar Toggler" />
 
         <div className={`navbar-collapse ${menuShown ? 'show' : 'collapse'}`}>
           <ul className="navbar-nav mx-auto">
@@ -76,7 +76,7 @@ const Menu = ({ username }: { username: string }) => {
           </ul>
 
           <ul className="navbar-nav ml-lg-auto">
-            <div className="ml-lg-4">
+            <li className="ml-lg-4">
               <div
                 className="color-mode d-lg-flex justify-content-center align-items-center"
                 onClick={toggleColorMode}
@@ -89,7 +89,7 @@ const Menu = ({ username }: { username: string }) => {
                 }
                 Color mode
               </div>
-            </div>
+            </li>
           </ul>
         </div>
       </div>
